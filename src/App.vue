@@ -26,7 +26,5 @@ import layout from '@/layout/index.vue'
 
 <style scoped>
 .app {
-  max-width: 100vw;
-  max-height: 100vh;
 }
 </style>

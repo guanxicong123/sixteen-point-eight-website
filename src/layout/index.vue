@@ -7,9 +7,11 @@
 <template>
   <div class="common-layout">
     <el-container>
-      <el-header>Header</el-header>
+      <el-header><Header></Header></el-header>
       <el-container>
-        <el-aside width="200px">Aside</el-aside>
+        <el-aside width="200px">
+          <Aside></Aside>
+        </el-aside>
         <el-main>
           <slot></slot>
         </el-main>
@@ -17,8 +19,9 @@
     </el-container>
   </div>
 </template>
-
 <script lang="ts" setup>
+import Header from './header/header.vue'
+import Aside from './Aside/aside.vue'
 const form = reactive({
   data: []
 })
@@ -27,4 +30,8 @@ const form = reactive({
 onMounted(() => {})
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="less" scoped>
+.el-header{
+  padding: 0;
+}
+</style>

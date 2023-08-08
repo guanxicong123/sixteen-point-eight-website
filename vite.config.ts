@@ -64,11 +64,20 @@ export default defineConfig({
       ],
       // 声明文件生成位置和文件名称
       dts: path.resolve(pathSrc, 'components.d.ts')
-    })
-    // Icons({
-    //   autoInstall: true,
-    // }),
+    }),
+    Icons({
+      autoInstall: true,
+    }),
   ],
+  css: {
+    // css预处理器
+    preprocessorOptions: {
+    less: {
+    charset: false,
+    additionalData: '@import "./src/assets/global.less";',
+    },
+    },
+    },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
