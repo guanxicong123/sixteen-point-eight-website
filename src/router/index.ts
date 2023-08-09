@@ -1,13 +1,27 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-
+import FrontPage from '@/views/FrontPage/index.vue'
+import Account from "@/views/UserManagement/Account/index.vue"
+import Role from "@/views/UserManagement/Role/index.vue"
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: FrontPage
+    },
+    {
+      path: '/userManagement/account',
+      name: 'home',
+      children:[{
+        path:'/userManagement/account',
+        name: 'Account',
+        component:Account
+      },{
+        path:'/userManagement/role',
+        name: 'Role',
+        component:Role
+      }]
     },
     {
       path: '/about',

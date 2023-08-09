@@ -6,12 +6,13 @@
 -->
 <template>
   <div class="com-header">
-    header111
+    <div class="user-name"><user></user></div>
+
   </div>
 </template>
 
 <script lang="ts" setup>
-
+import user from './components/user.vue'
 const form = reactive({
   data: []
 })
@@ -27,7 +28,12 @@ const form = reactive({
     .com-header{
       width: 100%;
       height: 60px;
-      background-color: blue;
+      background-color: #c6e2ff;
       color: #fff;
+      padding:0 20px;
+      vertical-align: center;
+      .user-name{
+        float: right
+      }
     }
 </style>

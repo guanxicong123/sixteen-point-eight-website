@@ -21,7 +21,7 @@
           </template>
           <el-menu-item :index="child.title" v-for="child in nav.children" :key="child.title">
             <el-icon><icon-menu /></el-icon>
-            <template #title>{{ child.title }}</template>
+            <template #title><router-link :to="child.link">{{ child.title }}</router-link></template>
           </el-menu-item>
         </el-sub-menu>
       </el-menu>
@@ -36,10 +36,12 @@ const navArray = ref([
 
     children: [
       {
-        title: '账号管理'
+        title: '账号管理',
+        link:'/userManagement/account'
       },
       {
-        title: '权限管理'
+        title: '权限管理',
+        link:'/userManagement/role'
       }
     ]
   }
@@ -49,4 +51,9 @@ const navArray = ref([
 onMounted(() => {})
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="less" scoped>
+a{
+  color: #111;
+  text-decoration: none;
+}
+</style>

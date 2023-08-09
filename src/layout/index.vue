@@ -13,7 +13,8 @@
           <Aside></Aside>
         </el-aside>
         <el-main>
-          <slot></slot>
+          <div class="real-main"><slot></slot></div>
+          
         </el-main>
       </el-container>
     </el-container>
@@ -33,5 +34,13 @@ onMounted(() => {})
 <style lang="less" scoped>
 .el-header{
   padding: 0;
+}
+.el-main{
+  background-color: #eee;
+  height: 90vh;
+  .real-main{
+    background-color: #fff;
+    height: 100%;
+  }
 }
 </style>

@@ -8,7 +8,7 @@ import layout from '@/layout/index.vue'
   <!-- <header> -->
   <div class="app">
     <layout>
-      <div>111</div>
+      <RouterView></RouterView>
     </layout>
 
     <!-- <div class="wrapper">
